@@ -1,4 +1,5 @@
 # url-shortening-app
+
 REST API for url shortening via Express
 
 ## Terminal commands
@@ -10,8 +11,15 @@ npm install
 ```
 
 Starting the server
+
 ```sh
 npm start
+```
+
+Starting the server (development)
+
+```sh
+npm run dev
 ```
 
 Running unit tests
@@ -21,44 +29,53 @@ npm test
 ```
 
 ## API Endpoints
+
 ### POST /encode
+
 parameters:
-| name | required | type   | description |
+| name | required | type | description |
 |------|----------|--------|-------------|
-|  url |   yes    | string | A valid URL format (starting with 'http:' or 'https:' |
+| url | yes | string | A valid URL format (starting with 'http:' or 'https:' |
 
 e.g.:
+
 ```sh
 { url: "http://google.com" }
 ```
 
 response:
+
 ```sh
 { url: <encoded_url> }
 ```
 
 e.g.:
+
 ```sh
 { url: "https://tpx.com/abcdefgh" }
 ```
 
 ### POST /decode
+
 parameters:
-| name | required | type   | description |
+| name | required | type | description |
 |------|----------|--------|-------------|
-|  url |   yes    | string | A valid URL format (starting with 'http:' or 'https:' |
+| url | yes | string | A valid URL format (starting with 'http:' or 'https:' |
 
 e.g.:
+
 ```sh
 { url: "https://tpx.com/abcdefgh" }
 ```
 
 response:
+
 ```sh
 { url: <decoded_url> }
 ```
 
 e.g.:
+
 ```sh
 { url: "http://google.com" }
 ```

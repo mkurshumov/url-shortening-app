@@ -1,7 +1,7 @@
 let encodedUrls = new Map();
-let decodedUrls = new Map();
+let urls = new Map();
 
 module.exports = {
   encodedUrls,
-  decodedUrls,
+  urls,
 };

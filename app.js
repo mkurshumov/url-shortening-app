@@ -17,6 +17,4 @@ app.use((req, res, next) => {
   res.status(404).send({ error: "API endpoint not found" });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+module.exports = app;

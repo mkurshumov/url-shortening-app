@@ -5,9 +5,9 @@ const { encodedUrls, urls } = require("../data/data");
 
 // mock data
 encodedUrls.set("http://google.com", "https://tpx.com/abcdefgh");
-urls.set("https://tpx.com/abcdefgh", "http://google.com");
-
 encodedUrls.set("http://facebook.com", "https://tpx.com/ijklmnop");
+
+urls.set("https://tpx.com/abcdefgh", "http://google.com");
 urls.set("https://tpx.com/ijklmnop", "http://facebook.com");
 
 describe("POST /encode", () => {

@@ -2,7 +2,7 @@
 
 REST API for url shortening via Express
 
-## Terminal commands
+## Setup
 
 Installing dependencies and devDependencies
 

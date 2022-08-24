@@ -35,12 +35,18 @@ npm test
 parameters:
 | name | required | type | description |
 |------|----------|--------|-------------|
-| url | yes | string | A valid URL format (starting with 'http:' or 'https:' |
+| url | yes | string or array of strings | A valid URL format (starting with 'http:' or 'https:') |
 
 e.g.:
 
 ```sh
 { url: "http://google.com" }
+```
+
+or
+
+```sh
+{ url: ["http://google.com", "http://facebook.com"] }
 ```
 
 response:
@@ -49,10 +55,22 @@ response:
 { url: <encoded_url> }
 ```
 
+or
+
+```sh
+{ url: [<encoded_url>, <encoded_url>] }
+```
+
 e.g.:
 
 ```sh
 { url: "https://tpx.com/abcdefgh" }
+```
+
+or
+
+```sh
+{ url: ["https://tpx.com/abcdefgh", "https://tpx.com/ijklmnop"] }
 ```
 
 ### POST /decode
@@ -60,12 +78,18 @@ e.g.:
 parameters:
 | name | required | type | description |
 |------|----------|--------|-------------|
-| url | yes | string | A valid URL format (starting with 'http:' or 'https:' |
+| url | yes | string or array of strings | A valid URL format (starting with 'http:' or 'https:') |
 
 e.g.:
 
 ```sh
 { url: "https://tpx.com/abcdefgh" }
+```
+
+or
+
+```sh
+{ url: ["https://tpx.com/abcdefgh", "https://tpx.com/ijklmnop"] }
 ```
 
 response:
@@ -74,10 +98,22 @@ response:
 { url: <decoded_url> }
 ```
 
+or
+
+```sh
+{ url: [<decoded_url>, <decoded_url>] }
+```
+
 e.g.:
 
 ```sh
 { url: "http://google.com" }
+```
+
+or
+
+```sh
+{ url: ["http://google.com", "http://facebook.com"] }
 ```
 
 N.B.: A url can be decoded only if exists (was encoded previously by POST /encode)

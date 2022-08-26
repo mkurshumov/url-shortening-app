@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 
+const validateBody = require("./common/validate-body");
 const urlRouter = require("./routers/url.router");
 
 app.use(express.json()); // for parsing application/json
 
+app.use("/", validateBody);
 app.use("/", urlRouter);
 
 // general error handler
